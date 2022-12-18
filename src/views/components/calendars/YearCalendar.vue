@@ -96,7 +96,7 @@ const isToday = (m, d, y) => {
                                 <div 
                                 v-for="date in getMonthsDates(month)" 
                                 :key="date"
-                                class="w-20 text-center text-dark text-primary_light_green"
+                                class="w-20 text-center text-primary_light_green"
                                 :class="isToday(month, date, year)? 'bg-white rounded-[20%] text-primary_blue' : ''"
                                 >
                                     {{ date }}
