@@ -4,7 +4,7 @@
     <div class="component_container">
         <div class="flex gap-20">
             <div class="relative">
-                <div class="badge w-10 h-10 bg-red-600 absolute top-0 right-0 z-10" />
+                <div class="badge w-10 h-10 bg-fail absolute top-0 right-0 z-10" />
                 <div class="avatar overflow-hidden">
                     <img 
                     src="/Theo.png" 
@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="relative">
-                <div class="badge w-10 h-10 bg-green-600 absolute top-0 right-0 z-10" />
+                <div class="badge w-10 h-10 bg-primary_green absolute top-0 right-0 z-10" />
                 <div class="avatar overflow-hidden">
                     <img 
                     src="/Theo.png" 
@@ -25,7 +25,7 @@
             </div>
             <div class="relative">
                 <div 
-                class="badge w-10 h-10 outline outline-[5px] outline-[#242424] bg-red-600 absolute top-0 right-0 z-10" />
+                class="badge w-10 h-10 outline outline-[5px] outline-dark bg-fail absolute top-0 right-0 z-10" />
                 <div class="avatar overflow-hidden">
                     <img 
                     src="/Theo.png" 
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="relative">
-                <div class="badge w-5 h-5 bg-red-600 outline outline-[2px] outline-[#242424] absolute top-0 right-0 z-10" />
+                <div class="badge w-5 h-5 bg-fail outline outline-[2px] outline-dark absolute top-0 right-0 z-10" />
                 <div class="avatar overflow-hidden">
                     <img 
                     src="/Theo.png" 

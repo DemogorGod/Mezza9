@@ -113,6 +113,19 @@ const theaterItems = shallowRef([
         ]
     },
     {
+        name: 'Calendars',
+        components: [
+            {
+                Name: 'Years',
+                'component': defineAsyncComponent(() => import('../components/calendars/YearCalendar.vue')),
+            },
+            {
+                Name: 'Months',
+                'component': defineAsyncComponent(() => import('../components/calendars/MonthCalendar.vue')),
+            },
+        ]
+    },
+    {
         name: 'Tooltips',
         components: [
             {

@@ -1,0 +1,18 @@
+{
+    "eslint.validate": [
+        "vue",
+        "html",
+        "javascript",
+        "typescript"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+    "vetur.format.defaultFormatterOptions": {
+        "prettier": {
+          "singleQuote": true
+        }
+    },
+    "eslint.codeActionsOnSave.rules": null
+}

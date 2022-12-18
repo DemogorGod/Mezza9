@@ -30,32 +30,41 @@
 
 @layer base {}
 @layer components {
+  .modal {
+    @apply absolute top-0 left-0 w-full h-full
+    grid place-content-center z-50;
+  }
+  .modal_content{
+    @apply text-dark px-25 py-15;
+  }
+  .calendar{
+    @apply rounded-[5px]
+    text-primary_white bg-primary_blue px-25 py-20;
+  }
+  .calendar_card{
+    @apply my-20 font-medium border border-primary_green
+    px-12 py-8 text-primary_green;
+  }
   .badge {
     border-radius: 50%;
   }
   .avatar{
     height: 50px;
     width: 50px;
-    background-color: #bbb;
     border-radius: 50%;
     @apply flex justify-center items-center
-    text-[#242424] font-bold;
+    text-primary_green font-bold bg-primary_blue;
   }
   .tooltip{
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted gray;
+    @apply relative inline-block border-b 
+    border-b-primary_white border-dotted;
   }
   .tooltip .tooltip_text {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 8px 12px;
-    border-radius: 6px;
+    @apply invisible bg-black text-primary_white
+    text-center px-12 py-8 rounded-[5px];
   }
   .tooltip:hover .tooltip_text {
-    visibility: visible;
+    @apply visible;
   }
   .tooltip_topleft{
     @apply absolute w-max
@@ -177,35 +186,35 @@
     border-color: black transparent transparent transparent;
   }
   .button {
-    @apply px-[12px] py-[8px] rounded font-bold;
+    @apply px-[16px] py-[10px] font-medium;
   }
   .btn_primary{
-    @apply border border-[#244696]
-    text-[#244696] bg-[#dee8ff]
-    hover:bg-[#bdccf0];
+    @apply border border-primary_green
+    text-primary_green bg-primary_blue
+    hover:text-primary_white hover:border-primary_white;
   }
   .btn_outline{
-    @apply text-[#bdccf0] border 
-    border-[#bdccf0] 
-    hover:text-[#244696] hover:border-[#244696];
+    @apply text-primary_green border 
+    border-primary_green 
+    hover:text-primary_white hover:border-primary_white;
   }
   .btn_text{
-    @apply text-[#bdccf0] 
-    hover:text-[#244696];
+    @apply text-primary_green 
+    hover:text-primary_white;
   }
   .btn_error{
-    @apply border border-[#b52b2b]
-    bg-[#b52b2b] text-white hover:bg-[#eda6a6];
+    @apply border border-fail
+    bg-fail text-primary_white hover:text-primary_light_green;
   }
   .btn_disabled{
-    @apply border border-[#dee8ff]
-    text-[#dee8ff] bg-[#888c94];
+    @apply border border-primary_green/[0.75]
+    text-primary_green/[0.75] bg-primary_blue/[0.75];
   }
   .btn_loading{
-    @apply border border-[#244696]
-    text-white bg-[#dee8ff];
+    @apply border border-primary_green
+    text-primary_white bg-primary_blue;
     background: linear-gradient(50deg, 
-    #244696,#80ABFF, #80ABFF, #244696);
+    #05386B,#379683,#5CDB95, #379683, #05386B);
     animation: movingBackground 4s ease infinite;
     background-size: 400%;
   }
@@ -226,20 +235,20 @@
     flex justify-center gap-5;
   }
   .alert_info {
-    @apply border border-[#244696]
-    bg-[#bdccf0] text-[#244696] font-medium;
+    @apply border border-primary_green
+    bg-primary_blue text-primary_green font-medium;
   }
   .alert_success {
-    @apply border border-[#2d851b]
-    bg-[#bcebb2] text-[#2d851b] font-medium;
+    @apply border border-primary_white
+    bg-primary_dark_green text-primary_white font-medium;
   }
   .alert_warning {
-    @apply border border-[#b52b2b]
-    bg-[#eda6a6] text-[#b52b2b] font-medium;
+    @apply border border-primary_white
+    bg-fail text-primary_white font-medium;
   }
   .alert_loading {
-    @apply border border-[#3e4240]
-    bg-[#c5d1ca] text-[#3e4240] font-medium;
+    @apply border border-dark
+    bg-primary_white text-dark font-medium;
   }
 }
 @layer utilities {

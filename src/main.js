@@ -17,6 +17,7 @@ uniCrosshairs,
 uniUserCircle,
 uniPadlock,
 uniThumbsUp,
+uniAngleLeft, uniAngleRight,
 } from 'vue-unicons/dist/icons'
 
 
@@ -33,6 +34,7 @@ uniCrosshairs,
 uniUserCircle,
 uniPadlock,
 uniThumbsUp,
+uniAngleLeft, uniAngleRight,
 ])
 
 createApp(App).use(Unicon,

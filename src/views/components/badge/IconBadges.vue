@@ -4,8 +4,8 @@
     <div class="component_container">
         <div class="flex gap-20">
             <div class="relative">
-                <div class="badge flex items-center bg-red-600 absolute top-[-5px] right-[-5px] z-10 p-5">
-                    <unicon name="padlock" fill="white" width="10" height="10"></unicon>
+                <div class="badge flex items-center bg-fail absolute top-[-5px] right-[-5px] z-10 p-5">
+                    <unicon name="padlock" fill="#242424" width="10" height="10"></unicon>
                 </div>
                 <div class="avatar overflow-hidden">
                     <img 
@@ -16,8 +16,8 @@
                 </div>
             </div>
             <div class="relative">
-                <div class="badge flex items-center bg-green-600 absolute top-[-5px] right-[-5px] z-10 p-5">
-                    <unicon name="thumbs-up" fill="white" width="10" height="10"></unicon>
+                <div class="badge flex items-center bg-primary_green absolute top-[-5px] right-[-5px] z-10 p-5">
+                    <unicon name="thumbs-up" fill="#242424" width="10" height="10"></unicon>
                 </div>
                 <div class="avatar overflow-hidden">
                     <img 

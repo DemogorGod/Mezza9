@@ -3,7 +3,7 @@
 <template>
     <div class="component_container">
         <div class="alert alert_success">
-            <unicon name="comment-verify" fill="#2d851b"></unicon> |  Good Job! 
+            <unicon name="comment-verify" fill="#EDF5E1"></unicon> |  Good Job! 
         </div>
     </div>
 </template>
