@@ -180,7 +180,7 @@ const isToday = (type, m, d, y) => {
                         </div>
                         <div 
                         v-for="date in selectedMonth" 
-                        class="w-20 text-center text-dark text-primary_light_green"
+                        class="w-20 text-center text-primary_light_green"
                         :class="date.type === 'out'? 'text-primary_white/[0.2]' : 'font-medium'"
                         :style="isToday(date.type, months[month], date.value, year)? 
                         'background: white; color: #05386B; border-radius: 20%;' : ''"
