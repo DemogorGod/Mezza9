@@ -136,59 +136,7 @@ const isToday = (type, m, d, y) => {
         >
             <div class="modal_content ">
                 <div class="calendar flex flex-col h-[450px] w-[400px] overflow-auto">
-                    <div class="flex justify-between w-full mb-20">
-                        <span class="font-bold text-[24px] flex items-center gap-5">
-                            <button 
-                            class="btn_text flex items-center"
-                            @mouseenter="hoverLeft = true"
-                            @mouseleave="hoverLeft = false"
-                            @click="moveDown()"
-                            >
-                                <unicon 
-                                name="angle-left" 
-                                :fill="hoverLeft? '#EDF5E1':'#5CDB95'"
-                                width="32"
-                                height="32"
-                                ></unicon>
-                            </button>
-                            {{ months[month] }}
-                        </span>
-                        <span class="font-bold text-primary_green text-[24px] ] flex items-center gap-5">
-                            {{ year }}
-                            <button 
-                            class="btn_text flex items-center"
-                            @mouseenter="hoverRight = true"
-                            @mouseleave="hoverRight = false"
-                            @click="moveUp()"
-                            >
-                                <unicon 
-                                name="angle-right" 
-                                :fill="hoverRight? '#EDF5E1':'#5CDB95'"
-                                width="32"
-                                height="32"
-                                ></unicon>
-                            </button>
-                        </span>
-                    </div>
-                    <div class="grid w-full place-content-center grid-cols-7 gap-25">
-                        <div 
-                        v-for="date in dates" 
-                        :key="date"
-                        class="w-20 text-center text-primary_white/[0.5] font-medium mb-10"
-                        >
-                            {{ date }}
-                        </div>
-                        <div 
-                        v-for="date in selectedMonth" 
-                        :key="date"
-                        class="w-20 text-center text-primary_light_green"
-                        :class="date.type === 'out'? 'text-primary_white/[0.2]' : 'font-medium'"
-                        :style="isToday(date.type, months[month], date.value, year)? 
-                        'background: white; color: #05386B; border-radius: 20%;' : ''"
-                        >
-                            {{ date.value }}
-                        </div>
-                    </div>
+                    xcfvgbnm
                 </div>
             </div>
         </div>

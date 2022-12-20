@@ -123,6 +123,18 @@ const theaterItems = shallowRef([
                 Name: 'Months',
                 'component': defineAsyncComponent(() => import('../components/calendars/MonthCalendar.vue')),
             },
+            {
+                Name: 'Monthly Events',
+                'component': defineAsyncComponent(() => import('../components/calendars/EventMonthlyCalendar.vue')),
+            },
+            {
+                Name: 'Weekly Events',
+                'component': defineAsyncComponent(() => import('../components/calendars/EventWeeklyCalendar.vue')),
+            },
+            {
+                Name: 'Daily Events',
+                'component': defineAsyncComponent(() => import('../components/calendars/EventDailyCalendar.vue')),
+            },
         ]
     },
     {

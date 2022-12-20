@@ -29,7 +29,7 @@ const months = [
     'December'
 ]
 const dates = ref([
-    'S','M','T', 'W','T','F','S'
+    'Sunday','Monday','Tuesday', 'Wednesday','Thursday','Friday','Saturday'
 ])
 
 const today = ref(new Date())
@@ -82,9 +82,24 @@ const calculateMonths = (month, year) => {
 
     let startInterval = 1
     for (let i = startDate; i < (currentMonthDays + startDate); i++) {
+        let events = Math.random() < 0.4
+        if (events) {
+            events = []
+            const randomEvents = Math.floor(Math.random() * 10)
+            for (let i = 0; i < randomEvents; i++) {
+                events.push(
+                    {
+                        title: 'Event #' + i,
+                        time: '0'+i+':00:00'
+                    }
+                )
+            }
+        }
+
         currentMonth[i] = {
             value: startInterval++,
-            type: 'in'
+            type: 'in',
+            events: events
         }
     }
 
@@ -117,6 +132,7 @@ const isToday = (type, m, d, y) => {
         return today.toDateString() === newDate.toDateString()
     } else {return false}
 }
+
 </script>
 
 <template>
@@ -135,8 +151,8 @@ const isToday = (type, m, d, y) => {
         class="modal "
         >
             <div class="modal_content ">
-                <div class="calendar flex flex-col h-[450px] w-[400px] overflow-auto">
-                    <div class="flex justify-between w-full mb-20">
+                <div class="calendar flex flex-col overflow-auto">
+                    <div class="flex justify-between w-full gap-20 mb-20">
                         <span class="font-bold text-[24px] flex items-center gap-5">
                             <button 
                             class="btn_text flex items-center"
@@ -170,23 +186,75 @@ const isToday = (type, m, d, y) => {
                             </button>
                         </span>
                     </div>
-                    <div class="grid w-full place-content-center grid-cols-7 gap-25">
+                    <div class="grid w-[1150px] place-content-center grid-cols-7">
                         <div 
                         v-for="date in dates" 
                         :key="date"
-                        class="w-20 text-center text-primary_white/[0.5] font-medium mb-10"
+                        class="text-center text-primary_white/[0.5] font-medium mb-20"
                         >
                             {{ date }}
                         </div>
+                        <hr class="col-span-7 mb-15">
                         <div 
                         v-for="date in selectedMonth" 
                         :key="date"
-                        class="w-20 text-center text-primary_light_green"
-                        :class="date.type === 'out'? 'text-primary_white/[0.2]' : 'font-medium'"
-                        :style="isToday(date.type, months[month], date.value, year)? 
-                        'background: white; color: #05386B; border-radius: 20%;' : ''"
+                        class="text-primary_light_green border h-[105px] px-5 overflow-auto"
                         >
-                            {{ date.value }}
+                            <div 
+                            class="w-full text-right"
+                            :class="date.type === 'out'? 'text-primary_white/[0.2]' : ''"
+                            >
+                                {{ date.value }}
+                            </div>
+                            <div
+                            v-for="(event, i) in date.events"
+                            :key="i"
+                            >   
+                                <div 
+                                v-if="date.events.length < 3 "
+                                class="text-[12px] flex justify-between bg-primary_green rounded-lg pl-10 pr-5 mb-5"
+                                :class="isToday(date.type, months[month], date.value, year)? 
+                                'bg-primary_white' : ''"
+                                >
+                                    <span 
+                                    class="w-full text-primary_blue font-medium truncate">
+                                        {{ event.title }}
+                                    </span>
+                                    <span
+                                    class="text-primary_blue/[0.7]">
+                                        {{ event.time }}
+                                    </span>
+                                </div>
+                                
+                                <div 
+                                v-else 
+                                class="text-[12px] pl-10 pr-5 bg-primary_green rounded-lg mb-5"
+                                >
+                                    <div
+                                    v-if="i === 0 || i === 1"
+                                    class="flex justify-between"
+                                    >
+                                        <span 
+                                        class="w-full text-primary_blue font-medium truncate">
+                                            {{ event.title }}
+                                        </span>
+                                        <span
+                                        class="text-primary_blue/[0.7]">
+                                            {{ event.time }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div 
+                            class="text-primary_green text-[10px] mt-[-3px] pl-10"
+                            v-if="date.events"
+                            >
+                                <div
+                                v-if="date.events.length > 2"
+                                >
+                                    {{ date.events.length - 2 }} more...
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
