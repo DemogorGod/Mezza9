@@ -199,6 +199,7 @@ const isToday = (type, m, d, y) => {
                         v-for="date in selectedMonth" 
                         :key="date"
                         class="text-primary_light_green border h-[105px] px-5 overflow-auto"
+                        :class="isToday(date.type, months[month], date.value, year)? 'bg-dark/[0.5]' : ''"
                         >
                             <div 
                             class="w-full text-right"
@@ -213,8 +214,6 @@ const isToday = (type, m, d, y) => {
                                 <div 
                                 v-if="date.events.length < 3 "
                                 class="text-[12px] flex justify-between bg-primary_green rounded-lg pl-10 pr-5 mb-5"
-                                :class="isToday(date.type, months[month], date.value, year)? 
-                                'bg-primary_white' : ''"
                                 >
                                     <span 
                                     class="w-full text-primary_blue font-medium truncate">
